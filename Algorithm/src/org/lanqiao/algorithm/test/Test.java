@@ -13,6 +13,14 @@ public class Test {
 //        System.out.println(6 & 1);
         //求一个数的第几位
 //        System.out.println(Util.getDigit(123,3));
+        String str = "你好，世界";
+        char[] chars = str.toCharArray();
+        for (int i = 0; i < chars.length; i++) {
+            char ch = chars[i];
+            System.out.println(ch);
+            System.out.print(chars[i]+ " ");
+            System.out.print((int)chars[i]);
+        }
 
     }
 }
