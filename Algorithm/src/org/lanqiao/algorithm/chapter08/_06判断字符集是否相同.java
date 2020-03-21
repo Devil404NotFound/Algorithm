@@ -15,6 +15,12 @@ public class _06判断字符集是否相同 {
         System.out.println(hasSameCharSet2(str1, str2 ));
     }
 
+    /**
+     * 这个判断s1有，而s2没有的情况时结果错误，如s1=hello，s2=hell，返回的是true（正确应该是false）
+     * @param str1
+     * @param str2
+     * @return
+     */
     public static boolean hasSameCharSet2(String str1, String str2){
         Map<Character,Integer> map = new HashMap<>();
         for (int i = 0; i < str1.length(); i++) {
