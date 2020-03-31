@@ -22,11 +22,14 @@ public class Test {
             System.out.print(chars[i]+ " ");
             System.out.print((int)chars[i]);
         }*/
-        String s1 = "heoello";
+        /*String s1 = "heoello";
         String s2 = "el";
 //        Boolean result = s1.contains(s2);
         String result = s1.substring(0,8);
-        System.out.println(result);
+        System.out.println(result);*/
+        char ch = '0';
+        int a = ch * 5;
+        System.out.println(a);
     }
 
 }
