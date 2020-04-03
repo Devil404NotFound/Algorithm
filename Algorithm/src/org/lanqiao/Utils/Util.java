@@ -16,6 +16,11 @@ public class Util {
         arr[i] = arr[j];
         arr[j] = temp;
     }
+    public static void swap(char[] arr, int i, int j){
+        char temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
+    }
 
     /**
      * 新建一个随机数组
