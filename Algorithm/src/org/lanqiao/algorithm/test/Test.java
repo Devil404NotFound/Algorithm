@@ -27,8 +27,8 @@ public class Test {
 //        Boolean result = s1.contains(s2);
         String result = s1.substring(0,8);
         System.out.println(result);*/
-        char ch = '0';
-        int a = ch * 5;
+        char ch = 'A';
+        int a = ch;
         System.out.println(a);
     }
 
