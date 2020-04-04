@@ -71,4 +71,18 @@ public class Util {
         }
         return num % 10;
     }
+
+    /**
+     * 判断是否是素数
+     * @param num 传入一个数字
+     * @return 返回true or false
+     */
+    public static boolean isPrime(long num){
+        for (int i = 2; i * i <= num; i++) {
+            if(num % i == 0){
+                return false;
+            }
+        }
+        return true;
+    }
 }
