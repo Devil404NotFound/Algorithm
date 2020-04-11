@@ -7,13 +7,16 @@ package org.lanqiao.algorithm.chapter03;
 public class _06高效的求a的n次幂 {
     public static void main(String[] args) {
         int a = 2;
-        int n = 20;
-        int res = pwo0(a,n);
+        int n = -2 ;
+        /*int res = pwo0(a,n);
         System.out.println(res);
         res = pow(a, n);
         System.out.println(res);
         res = pow2(a, n);
-        System.out.println(res);
+        System.out.println(res);*/
+        double aa = 2;
+        double result = pow3(aa,n);
+        System.out.println(result);
     }
     //原始方法
     public static int pwo0(int a, int n){
@@ -49,6 +52,16 @@ public class _06高效的求a的n次幂 {
             n = n >> 1;
         }
         return res;
+    }
+    public static double pow3(double x, int n) {
+        double res = 1.0;
+        for (int i = n; i != 0; i /= 2) {
+            if((i&1) == 1){
+                res *= x;
+            }
+            x *= x;
+        }
+        return n > 0? res : 1/ res;
     }
 
 }

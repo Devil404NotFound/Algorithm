@@ -3,12 +3,16 @@ package org.lanqiao.algorithm.test;
 import com.sun.org.apache.xpath.internal.operations.Bool;
 import org.lanqiao.Utils.Util;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class Test {
     public static void main(String[] args) {
-//        int i = 100;
-//        System.out.println(Integer.toBinaryString(i));
-//        System.out.println(i>>2);
-//        System.out.println(i<<1);
+        int i = 100;
+        System.out.println(Integer.toBinaryString(i));
+        System.out.println(i>>2);
+        System.out.println(i<<1);
+        System.out.println(1 << 1);
 //        int[] arr = Util.getRandomArr(10, 4, 5);
 //        Util.print(arr);
 //        System.out.println(6 & 1);
@@ -30,7 +34,18 @@ public class Test {
         /*char ch = 'A';
         int a = ch;
         System.out.println(a);*/
-        System.out.println(16>>2);
-    }
+        //看看计算机的正数负数的二进制
+        /*System.out.println(Integer.toBinaryString(Integer.MAX_VALUE));
+        System.out.println(Integer.MIN_VALUE);
+        System.out.println(Integer.toBinaryString(Integer.MIN_VALUE));
+        System.out.println(Integer.toBinaryString(-Integer.MIN_VALUE));
+        System.out.println(-Integer.MIN_VALUE);
+        int n = 6;
+        System.out.println(Integer.toBinaryString(n));
+        System.out.println(Integer.toBinaryString(-n));
+        System.out.println(n&-n);*/
+        //字符串
+//        System.out.println("abc".indexOf("b"));
 
+    }
 }
