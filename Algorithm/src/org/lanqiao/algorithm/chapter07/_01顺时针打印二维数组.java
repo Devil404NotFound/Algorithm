@@ -24,11 +24,11 @@ public class _01顺时针打印二维数组 {
 
     public static void pirnt(int[][] arr) {
         int leftUpRow = 0, leftUpCol = 0, rightDownRow = arr.length - 1, rightDownCol = arr[0].length - 1;
-        int row = 0, col = 0;
+        int row = 0, col = -1;
         while (leftUpCol <= rightDownCol) {
             //左-右
             while (col < rightDownCol) {
-                System.out.print(arr[row][col++] + " ");
+                System.out.print(arr[row][++col] + " ");
             }
             //重置列（越界了）
             //col = rightDownCol;
@@ -38,26 +38,25 @@ public class _01顺时针打印二维数组 {
             //row++;
             //上-下
             while (row < rightDownRow) {
-                System.out.print(arr[row++][col] + " ");
+                System.out.print(arr[++row][col] + " ");
             }
             //row = rightDownRow;
             rightDownCol--;
            // col--;
             //下-左
             while (col > leftUpCol) {
-                System.out.print(arr[row][col--] + " ");
+                System.out.print(arr[row][--col] + " ");
             }
             //col = leftUpCol;
             rightDownRow--;
             //row--;
             //左-上
             while (row > leftUpRow) {
-                System.out.print(arr[row--][col] + " ");
+                System.out.print(arr[--row][col] + " ");
             }
             //row = leftUpRow;
             leftUpCol++;
             //col++;
         }
-        System.out.println(arr[row][col]);
     }
 }

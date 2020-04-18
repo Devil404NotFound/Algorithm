@@ -10,7 +10,7 @@ import java.util.Set;
  */
 public class _04递推非数值型问题 {
     public static void main(String[] args) {
-        int n = 10;
+        int n = 4;
         Set<String> set = parenthisis(n);
         System.out.println(set);
         set = parenthisis2(n);
