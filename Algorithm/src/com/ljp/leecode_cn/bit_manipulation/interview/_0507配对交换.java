@@ -1,4 +1,4 @@
-package com.ljp.leecode_cn.interview;
+package com.ljp.leecode_cn.bit_manipulation.interview;
 /**
 
  面试题 05.07. 配对交换

@@ -1,6 +1,4 @@
-package com.ljp.leecode_cn.data_structure;
-
-import org.w3c.dom.NodeList;
+package com.ljp.leecode_cn.other.data_structure;
 
 import java.util.Scanner;
 

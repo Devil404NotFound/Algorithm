@@ -1,4 +1,4 @@
-package com.ljp.leecode_cn.interview;
+package com.ljp.leecode_cn.bit_manipulation.interview;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,6 +29,27 @@ import java.util.List;
  著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
  */
 public class _0804幂集 {
+    public static void main(String[] args) {
+        int[] nums = {1,2,3};
+        System.out.println(subsets(nums));
+    }
+    //二进制解法
+    public static List<List<Integer>> subsets(int[] nums) {
+        int n = 1<<nums.length;
+        List<List<Integer>> res = new ArrayList<>();
+        List<Integer> list;
+        for(int i = 0; i < n; i++){
+            list = new ArrayList<>();
+            for(int j = 0; j < nums.length; j++){
+                if(((i >> j) & 1) == 1){
+                    list.add(nums[j]);
+                }
+            }
+            res.add(list);
+        }
+        return res;
+    }
+
     class Solution {
         public List<List<Integer>> subsets(int[] nums) {
             if(nums == null || nums.length == 0){

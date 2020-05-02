@@ -4,7 +4,9 @@ import com.sun.org.apache.xpath.internal.operations.Bool;
 import org.lanqiao.Utils.Util;
 
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
+import java.util.Set;
 
 public class Test {
     public static void main(String[] args) {
@@ -51,7 +53,49 @@ public class Test {
         /*int n = 5;
         n -= 3 + 1;
         System.out.println(n);*/
-        double data = 3.141592;
-        System.out.println(String.format("%.2f", data));
+        /*double data = 3.141592;
+        System.out.println(String.format("%.2f", data));*/
+     /*   System.out.println(Integer.toBinaryString(-3));
+        System.out.println(Integer.toBinaryString(2));*/
+//        int i = 3;
+//        i = (i & 0x33333333) + ((i >>> 2) & 0x33333333);
+//        i = i - ((i >>> 1) & 0x55555555);
+//        System.out.println(i);
+//        System.out.println(0b11111111111111111111111111);//[a-z]映射位图最大整数
+//        System.out.println(1 << 0);
+
+        Set<Obstacle> set = new HashSet<>();
+        Obstacle o1 = new Obstacle(1,2);
+        Obstacle o2 = new Obstacle(2,1);
+        System.out.println(o1.equals(o2));
+        System.out.println(set.add(o1));
+        System.out.println(set.add(o2));
+
+    }
+    static class Obstacle{
+        int x;
+        int y;
+
+        public Obstacle(int x, int y) {
+            this.x = x;
+            this.y = y;
+        }
+
+        @Override
+        public int hashCode() {
+            return Integer.hashCode(x) + Integer.hashCode(y);
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if(this == obj){
+                return true;
+            }
+            if(!(obj instanceof Obstacle)){
+                return false;
+            }
+            Obstacle o2 = (Obstacle)obj;
+            return this.x == o2.x && this.y == o2.y;
+        }
     }
 }

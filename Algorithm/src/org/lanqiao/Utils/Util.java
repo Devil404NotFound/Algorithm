@@ -43,6 +43,10 @@ public class Util {
      * @param arr
      */
     public static void print(int[] arr){
+        if(arr.length == 0){
+            System.out.println("");
+            return;
+        }
         for(int i = 0; i < arr.length - 1; i++) {
             System.out.print(arr[i] + ",");
         }

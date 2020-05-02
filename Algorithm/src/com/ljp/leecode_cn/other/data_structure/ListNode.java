@@ -1,4 +1,4 @@
-package com.ljp.leecode_cn.data_structure;
+package com.ljp.leecode_cn.other.data_structure;
 
 public class ListNode {
     int val;
