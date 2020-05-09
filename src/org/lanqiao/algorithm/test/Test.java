@@ -64,14 +64,30 @@ public class Test {
 //        System.out.println(0b11111111111111111111111111);//[a-z]映射位图最大整数
 //        System.out.println(1 << 0);
 
-        Set<Obstacle> set = new HashSet<>();
+       /* Set<Obstacle> set = new HashSet<>();
         Obstacle o1 = new Obstacle(1,2);
         Obstacle o2 = new Obstacle(2,1);
         System.out.println(o1.equals(o2));
         System.out.println(set.add(o1));
-        System.out.println(set.add(o2));
-
+        System.out.println(set.add(o2));*/
+        /*System.out.println(test.a);//5
+        test t1 = new test();
+        test t2 = new test();
+        System.out.println(t1.a);//5
+        t1.a = 1;
+        System.out.println(t1.a);//1
+        System.out.println(test.a);//1
+        System.out.println(t2.a);//1
+        t2.a = 10;
+        System.out.println(t2.a);//10
+        System.out.println(t1.a);//10
+*/
+        System.out.println(Long.MAX_VALUE);
+        System.out.println((long)(Integer.MAX_VALUE / 2) * (Integer.MAX_VALUE / 2));
     }
+/*    static class test{
+        static int a = 5;
+    }*/
     static class Obstacle{
         int x;
         int y;
