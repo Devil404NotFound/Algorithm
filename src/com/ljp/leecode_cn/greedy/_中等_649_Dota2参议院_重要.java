@@ -49,7 +49,7 @@ import java.util.Queue;
 
  给定字符串的长度在 [1, 10,000] 之间.
  */
-public class _中等_649_Dota2参议院    {
+public class _中等_649_Dota2参议院_重要 {
     public static void main(String[] args) {
         String senate = "DRRDRDRDRDDRDRDR";
         System.out.println(predictPartyVictory(senate));
