@@ -98,7 +98,7 @@ public class _中等_1371_每个元音包含偶数次的最长字符串 {
         }
         return ans;
     }
-    public int findTheLongestSubstring3(String s) {
+    /*public int findTheLongestSubstring3(String s) {
         String aeiou = "aeiou";
         char[] ch = s.toCharArray();
         //建立一个映射数组，a,e,i,o,u,分别为1,2,3,4,5，其他都为-1
@@ -116,6 +116,6 @@ public class _中等_1371_每个元音包含偶数次的最长字符串 {
         }
         int low = 0, high = ch.length - 1;
 
-    }
+    }*/
 
 }
