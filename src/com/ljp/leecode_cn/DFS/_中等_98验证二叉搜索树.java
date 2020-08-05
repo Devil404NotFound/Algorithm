@@ -1,4 +1,4 @@
-package com.ljp.leecode_cn.depth_first_search;
+package com.ljp.leecode_cn.DFS;
 
 /**
  * 98. 验证二叉搜索树
