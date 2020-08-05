@@ -1,12 +1,12 @@
 package com.ljp.leecode_cn.other.data_structure;
 
 public class ListNode {
-    int val;
-    ListNode next;
-    ListNode(int x) {
+    public int val;
+    public ListNode next;
+    public ListNode(int x) {
         val = x;
     }
-    ListNode createListNode(int[] arr) {
+    public ListNode createListNode(int[] arr) {
         ListNode node = this;
         for (int i = 1; i < arr.length; i++) {
             ListNode p = new ListNode(arr[i]);
@@ -44,6 +44,14 @@ public class ListNode {
         }
         p3.next = (p1 == null? p2 : p1);
         return newList;
+    }
+    public void print(){
+        ListNode node = this;
+        while(node != null){
+            System.out.print(node.val + "→");
+            node = node.next;
+        }
+        System.out.println("NULL");
     }
     @Override
     public String toString() {
