@@ -15,8 +15,8 @@ package com.ljp.leecode_cn.bit_manipulation;
  */
 public class _201按位与 {
     public static void main(String[] args) {
-        int m = 6;
-        int n = 7;
+        int m = 0b11011;
+        int n = 0b1011;
         System.out.println(rangeBitwiseAnd(m,n));
         System.out.println(rangeBitwiseAnd2(m,n));
         System.out.println(rangeBitwiseAnd3(m,n));
@@ -48,6 +48,17 @@ public class _201按位与 {
             return res;
         }
     }
+
+    /**
+     *官方题解：位移，通过位移求共同前缀，m-n的共同前缀即为[m, n]之间的共同前缀
+     * @param m
+     * @param n
+     * @return
+     * 执行用时：
+    7 ms, 在所有 Java 提交中击败了39.36%的用户
+    内存消耗：
+    38.9 MB, 在所有 Java 提交中击败了85.92%的用户
+     */
     public static int rangeBitwiseAnd3(int m, int n) {
         int zero = 0;
         while(m != n){
