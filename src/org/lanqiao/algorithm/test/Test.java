@@ -10,6 +10,9 @@ import java.util.Set;
 
 public class Test {
     public static void main(String[] args) {
+
+
+
         /*int i = 100;
         System.out.println(Integer.toBinaryString(i));
         System.out.println(i>>2);
@@ -82,13 +85,14 @@ public class Test {
         System.out.println(t2.a);//10
         System.out.println(t1.a);//10
 */
-        System.out.println(Long.MAX_VALUE);
-        System.out.println((long)(Integer.MAX_VALUE / 2) * (Integer.MAX_VALUE / 2));
+        /*System.out.println(Long.MAX_VALUE);
+        System.out.println((long)(Integer.MAX_VALUE / 2) * (Integer.MAX_VALUE / 2));*/
     }
 /*    static class test{
         static int a = 5;
     }*/
-    static class Obstacle{
+    //重写hashCode()和equals()
+    /*static class Obstacle{
         int x;
         int y;
 
@@ -113,5 +117,5 @@ public class Test {
             Obstacle o2 = (Obstacle)obj;
             return this.x == o2.x && this.y == o2.y;
         }
-    }
+    }*/
 }
