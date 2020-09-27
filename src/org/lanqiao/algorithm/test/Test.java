@@ -1,6 +1,6 @@
 package org.lanqiao.algorithm.test;
 
-import com.sun.org.apache.xpath.internal.operations.Bool;
+//import com.sun.org.apache.xpath.internal.operations.Bool;
 import org.lanqiao.Utils.Util;
 
 import java.util.HashMap;
@@ -85,8 +85,8 @@ public class Test {
         System.out.println(t2.a);//10
         System.out.println(t1.a);//10
 */
-        /*System.out.println(Long.MAX_VALUE);
-        System.out.println((long)(Integer.MAX_VALUE / 2) * (Integer.MAX_VALUE / 2));*/
+        System.out.println(Long.MAX_VALUE);
+        System.out.println((long)(Integer.MAX_VALUE / 2) * (Integer.MAX_VALUE / 2));
     }
 /*    static class test{
         static int a = 5;
