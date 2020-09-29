@@ -1,4 +1,4 @@
-package com.ljp.leecode_cn.DFS;
+package com.ljp.leecode_cn.binary_search;
 
 /**
  * 98. 验证二叉搜索树

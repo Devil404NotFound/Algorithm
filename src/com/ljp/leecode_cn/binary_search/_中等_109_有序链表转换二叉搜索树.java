@@ -1,4 +1,4 @@
-package com.ljp.leecode_cn.DFS;
+package com.ljp.leecode_cn.binary_search;
 
 import com.ljp.leecode_cn.other.data_structure.ListNode;
 import com.ljp.leecode_cn.other.data_structure.TreeNode;
