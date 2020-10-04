@@ -3,6 +3,7 @@ package com.ljp.leecode_cn.other.data_structure;
 public class ListNode {
     public int val;
     public ListNode next;
+    public ListNode(){}
     public ListNode(int x) {
         val = x;
     }
