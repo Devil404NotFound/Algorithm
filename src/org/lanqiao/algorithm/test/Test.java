@@ -3,10 +3,7 @@ package org.lanqiao.algorithm.test;
 //import com.sun.org.apache.xpath.internal.operations.Bool;
 import org.lanqiao.Utils.Util;
 
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 public class Test {
     public static void main(String[] args) {
@@ -85,8 +82,12 @@ public class Test {
         System.out.println(t2.a);//10
         System.out.println(t1.a);//10
 */
-        System.out.println(Long.MAX_VALUE);
-        System.out.println((long)(Integer.MAX_VALUE / 2) * (Integer.MAX_VALUE / 2));
+        /*System.out.println(Long.MAX_VALUE);
+        System.out.println((long)(Integer.MAX_VALUE / 2) * (Integer.MAX_VALUE / 2));*/
+        String[] str = {"hello", "world", "!"};
+        List<String> list = Arrays.asList(str);
+        str[0] = "HHHHH";
+        list.add("can I add it ?");
     }
 /*    static class test{
         static int a = 5;
