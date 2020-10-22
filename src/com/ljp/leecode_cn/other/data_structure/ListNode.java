@@ -7,6 +7,10 @@ public class ListNode {
     public ListNode(int x) {
         val = x;
     }
+    public ListNode(int x, ListNode next){
+        this.val = x;
+        this.next = next;
+    }
     public ListNode createListNode(int[] arr) {
         ListNode node = this;
         for (int i = 1; i < arr.length; i++) {
