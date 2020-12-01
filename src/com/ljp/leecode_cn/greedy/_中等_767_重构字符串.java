@@ -67,9 +67,13 @@ public class _中等_767_重构字符串 {
     }
 
     /**
-     * 自己实现的大顶堆排序(未测试）
+     * 自己实现的大顶堆排序
      * @param S
      * @return
+    执行用时：
+    1 ms, 在所有 Java 提交中击败了97.65%的用户
+    内存消耗：
+    36.6 MB, 在所有 Java 提交中击败了82.13%的用户
      */
     public String reorganizeString4(String S) {
         if(S.length() < 2) {
