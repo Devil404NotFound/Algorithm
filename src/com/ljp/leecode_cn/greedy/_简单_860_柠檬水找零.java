@@ -1,6 +1,6 @@
 package com.ljp.leecode_cn.greedy;
 
-/**
+/** 每日一题 2020.12.10
  * 860. 柠檬水找零
  在柠檬水摊上，每一杯柠檬水的售价为 5 美元。
 
@@ -73,6 +73,39 @@ public class _简单_860_柠檬水找零 {
                 }
             }
             if(change_5 < 0){
+                return false;
+            }
+        }
+        return true;
+    }
+
+    /**
+     * 时隔半年，代码思路一模一样
+     * @param bills
+     * @return
+    执行用时：
+    2 ms, 在所有 Java 提交中击败了99.72%的用户
+    内存消耗：
+    39.5 MB, 在所有 Java 提交中击败了64.58%的用户
+     */
+    public boolean lemonadeChange2(int[] bills) {
+        int five = 0;
+        int ten = 0;
+        for(int num : bills) {
+            if(num == 5) {
+                ++five;
+            }else if(num == 10) {
+                ++ten;
+                --five;
+            }else{
+                if(ten > 0) {
+                    --ten;
+                }else{
+                    five -= 2;
+                }
+                --five;
+            }
+            if(five < 0) {
                 return false;
             }
         }
