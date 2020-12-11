@@ -1,11 +1,10 @@
 package com.ljp.leecode_cn.greedy;
 
-import java.util.HashMap;
+import java.util.Deque;
 import java.util.LinkedList;
-import java.util.Map;
 import java.util.Queue;
 
-/**
+/** 2020.12.11 每日一题
  * 649. Dota2 参议院
  Dota2 的世界里有两个阵营：Radiant(天辉)和 Dire(夜魇)
 
@@ -165,5 +164,40 @@ public class _中等_649_Dota2参议院_重要 {
             }
         }
         return people[0] > 0 ? "Radiant" : "Dire";
+    }
+
+    /**
+     * 2020.12.11日 模拟投票过程-贪心
+     * @param senate
+     * @return
+    执行用时：
+    12 ms, 在所有 Java 提交中击败了47.29%的用户
+    内存消耗：
+    39.5 MB, 在所有 Java 提交中击败了17.58%的用户
+     */
+    public String predictPartyVictory4(String senate) {
+        int vote = 0;
+        Deque<Character> deque = new LinkedList<>();
+        for(char c : senate.toCharArray()) {
+            deque.offer(c);
+        }
+        while(!deque.isEmpty()) {
+            if(Math.abs(vote) > deque.size()) {
+                break;
+            }
+            char c = deque.poll();
+            if(c == 'R'){
+                ++vote;
+                if(vote > 0) {
+                    deque.offer(c);
+                }
+            }else{
+                --vote;
+                if(vote < 0) {
+                    deque.offer(c);
+                }
+            }
+        }
+        return vote > 0 ? "Radiant" : "Dire";
     }
 }
