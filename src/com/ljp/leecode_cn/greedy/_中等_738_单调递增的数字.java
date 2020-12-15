@@ -1,6 +1,6 @@
 package com.ljp.leecode_cn.greedy;
 
-/**
+/** 每日一题 2020.12.15
  * 738. 单调递增的数字
  给定一个非负整数 N，找出小于或等于 N 的最大的整数，同时这个整数需要满足其各个位数上的数字是单调递增。
 
@@ -26,9 +26,10 @@ public class _中等_738_单调递增的数字 {
      * @param N
      * @return
      * 执行用时 :
-    1 ms, 在所有 Java 提交中击败了99.25%的用户
-    内存消耗 :
-    36.2 MB, 在所有 Java 提交中击败了33.33%的用户
+    执行用时：
+    0 ms, 在所有 Java 提交中击败了100.00%的用户
+    内存消耗：
+    35.1 MB, 在所有 Java 提交中击败了92.03%的用户
      */
     public int monotoneIncreasingDigits(int N) {
         int res = N;
@@ -45,7 +46,37 @@ public class _中等_738_单调递增的数字 {
             last = i % 10;
             i /= 10;
         }
-
         return res;
     }
+
+    /**
+     * 官方题解一：贪心
+     * @param N
+     * @return
+    执行用时：
+    1 ms, 在所有 Java 提交中击败了97.96%的用户
+    内存消耗：
+    35.3 MB, 在所有 Java 提交中击败了73.52%的用户
+     */
+    public int monotoneIncreasingDigits2(int N) {
+        char[] chars = String.valueOf(N).toCharArray();
+        int i = 1;
+        //找到第一个递减数
+        while(i < chars.length && chars[i - 1] <= chars[i]) {
+            ++i;
+        }
+        //向前借位
+        if(i < chars.length) {
+            while(i > 0 && chars[i - 1] > chars[i]) {
+                --chars[i - 1];
+                --i;
+            }
+        }
+        //后面设置为9
+        for (i += 1; i < chars.length; i++) {
+            chars[i] = '9';
+        }
+        return Integer.valueOf(String.valueOf(chars));
+    }
+
 }
