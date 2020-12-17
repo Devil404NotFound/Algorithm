@@ -1,6 +1,6 @@
 package com.ljp.leecode_cn.greedy;
 
-/**
+/** 每日一题 2020.12.17
  * 714. 买卖股票的最佳时机含手续费【中等】
  给定一个整数数组 prices，其中第 i 个元素代表了第 i 天的股票价格 ；非负整数 fee 代表了交易股票的手续费用。
 
@@ -49,11 +49,12 @@ public class _中等_714_买卖股票的最佳时机含手续费 {
         int end = 0;//最高点
         for(int i = 1; i < prices.length; i++){
             if(prices[i] < prices[end] - fee){//遇到下一个比上一个减去手续费还少
-                int proft = prices[end] - prices[start] - fee;
-                if(proft > 0){
-                    sum += proft;
+                int profit = prices[end] - prices[start] - fee;
+                if(profit > 0){
+                    sum += profit;
                     start = i;
                 }
+
                 end = i;//最高点必须更新
             }else if(prices[i] > prices[end]){
                 end = i;
@@ -88,5 +89,32 @@ public class _中等_714_买卖股票的最佳时机含手续费 {
             none[i] = Math.max(none[i - 1], hold[i - 1] + prices[i] - fee);
         }
         return hold[prices.length - 1];
+    }
+
+    /**
+     * 官方题解二： 贪心
+     * @param prices
+     * @param fee
+     * @return
+     * 2020.12.17
+    执行用时：
+    5 ms, 在所有 Java 提交中击败了64.88%的用户
+    内存消耗：
+    47.6 MB, 在所有 Java 提交中击败了78.43%的用户
+     */
+    public int maxProfit3(int[] prices, int fee) {
+        int n = prices.length;
+        int buy = prices[0] + fee;
+        int profit = 0;
+        for (int i = 1; i < n; i++) {
+            //如果买入价小于之前的买入价，就更新买入价
+            if(prices[i] + fee < buy) {
+                buy = prices[i] + fee;
+            }else if(prices[i] > buy){//如果卖出价格比买入价+手续费高，说明有得赚
+                profit += prices[i] - buy;
+                buy = prices[i];
+            }
+        }
+        return profit;
     }
 }
