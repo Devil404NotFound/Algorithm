@@ -1,6 +1,6 @@
 package com.ljp.leecode_cn.math;
 
-/**
+/** 每日一题 2021.01.17
  *
  1232. 缀点成线
  在一个 XY 坐标系中有一些点，我们用数组 coordinates 来分别记录它们的坐标，其中 coordinates[i] = [x, y] 表示横坐标为 x、纵坐标为 y 的点。
@@ -72,6 +72,31 @@ public class _简单_1232_缀点成线 {
             int x = coordinates[i][0];
             int y = coordinates[i][1];
             if(Math.abs(y - a * x - c) > EPSILON){
+                return false;
+            }
+        }
+        return true;
+    }
+
+    /**
+     * 官方题解：数学（每个点都移动P0个位置——即P0变成了原点）
+     * @param coordinates
+     * @return
+    执行用时：
+    0 ms, 在所有 Java 提交中击败了100.00%的用户
+    内存消耗：
+    38.1 MB, 在所有 Java 提交中击败了63.64%的用户
+     */
+    public boolean checkStraightLine2(int[][] coordinates) {
+        int dataX = coordinates[0][0], dataY = coordinates[0][1];
+        for(int[] coordinate : coordinates) {
+            coordinate[0] -= dataX;
+            coordinate[1] -= dataY;
+        }
+        int A = coordinates[1][1], B = -coordinates[1][0];
+        for(int[] coordinate : coordinates) {
+            int x = coordinate[0], y = coordinate[1];
+            if(A * x + B * y != 0) {
                 return false;
             }
         }
