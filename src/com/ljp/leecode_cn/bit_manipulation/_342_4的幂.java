@@ -55,4 +55,13 @@ public class _342_4的幂 {
         }
         return (num & 0x55555555) != 0;
     }
+
+    /**
+     * 2021.05.31
+     * @param n
+     * @return
+     */
+    public boolean isPowerOfFour3(int n) {
+        return (n > 0 && (n & (n - 1)) == 0 && (Integer.bitCount(n - 1) & 1) == 0);
+    }
 }
