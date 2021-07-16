@@ -63,7 +63,7 @@ public class 简单_53_在排序数组中查找数字I {
      */
     public int search2(int[] nums, int target) {
         int leftIndex = binarySearch(nums, target, true);
-        int rightIndex = binarySearch(nums, target, false);
+        int rightIndex = binarySearch(nums, target, false) - 1;
         if(leftIndex <= rightIndex && rightIndex < nums.length && nums[leftIndex] == target && nums[rightIndex] == target) {
             return rightIndex - leftIndex + 1;
         }
