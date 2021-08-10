@@ -1,6 +1,6 @@
 package com.ljp.leecode_cn.greedy;
 
-/**
+/** 每日一题 2020.12.12
  * 376. 摆动序列
  如果连续数字之间的差严格地在正数和负数之间交替，则数字序列称为摆动序列。第一个差（如果存在的话）可能是正数或负数。少于两个元素的序列也是摆动序列。
 
@@ -77,6 +77,13 @@ public class _中等_376_摆动序列 {
         }
         return Math.max(max1, max2);
     }*/
+
+    /**
+     * 官方题解三：贪心算法
+     通过统计有多少个峰值和谷值
+     * @param nums
+     * @return
+     */
     public static int wiggleMaxLength(int[] nums) {
         if(nums.length < 2){
             return nums.length;

@@ -2,7 +2,7 @@ package com.ljp.leecode_cn.Link;
 
 import com.ljp.leecode_cn.other.data_structure.ListNode;
 
-/**
+/** 每日一题 2021.06.05
  * @author lijunpeng
  * @date 2021/6/5 23:57
  * @Description 203. 移除链表元素

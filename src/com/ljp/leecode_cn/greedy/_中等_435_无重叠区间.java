@@ -3,7 +3,7 @@ package com.ljp.leecode_cn.greedy;
 import java.util.Arrays;
 import java.util.Comparator;
 
-/**
+/** 每日一题 2020.12.31
  * 435. 无重叠区间
  给定一个区间的集合，找到需要移除区间的最小数量，使剩余区间互不重叠。
 
@@ -71,4 +71,41 @@ public class _中等_435_无重叠区间 {
         return min;
     }
 
+    /**
+     * 2020.12.31重新写一次代码，贪心
+     * @param intervals
+     * @return
+    执行用时：
+    3 ms, 在所有 Java 提交中击败了83.29%的用户
+    内存消耗：
+    38.6 MB, 在所有 Java 提交中击败了28.65%的用户
+     */
+    public int eraseOverlapIntervals2(int[][] intervals) {
+        if(intervals.length <= 1) {
+            return 0;
+        }
+        int count = 0;
+        Arrays.sort(intervals, new Comparator<int[]>(){
+            @Override
+            public int compare(int[] o1, int[] o2) {
+                if(o1[1] == o2[1]){
+                    return o1[0] - o2[0];
+                }else{
+                    return o1[1] - o2[1];
+                }
+            }
+        });
+        int start = intervals[0][0];
+        int end = intervals[0][1];
+        for(int i = 1; i < intervals.length; ++i) {
+            int[] curr = intervals[i];
+            if(curr[0] >= end) {
+                start = curr[0];
+                end = curr[1];
+            }else{
+                ++count;
+            }
+        }
+        return count;
+    }
 }

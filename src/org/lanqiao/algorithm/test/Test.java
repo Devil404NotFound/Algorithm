@@ -1,14 +1,23 @@
 package org.lanqiao.algorithm.test;
 
 //import com.sun.org.apache.xpath.internal.operations.Bool;
-import org.lanqiao.Utils.Util;
 
-import java.util.*;
+class Parent {
+    public String str = "父类属性";
+    public String getStr() {
+        return this.str;
+    }
 
+}
+class Sub extends Parent{
+    public String str = "子类属性";
+}
 public class Test {
+
     public static void main(String[] args) {
-
-
+        Sub sub = new Sub();
+        System.out.println(sub.getStr());
+        System.out.println(sub.str);
 
         /*int i = 100;
         System.out.println(Integer.toBinaryString(i));
@@ -84,10 +93,10 @@ public class Test {
 */
         /*System.out.println(Long.MAX_VALUE);
         System.out.println((long)(Integer.MAX_VALUE / 2) * (Integer.MAX_VALUE / 2));*/
-        String[] str = {"hello", "world", "!"};
+        /*String[] str = {"hello", "world", "!"};
         List<String> list = Arrays.asList(str);
         str[0] = "HHHHH";
-        list.add("can I add it ?");
+        list.add("can I add it ?"); //报错*/
     }
 /*    static class test{
         static int a = 5;

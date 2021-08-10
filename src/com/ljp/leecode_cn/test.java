@@ -1,5 +1,7 @@
 package com.ljp.leecode_cn;
 
+import com.ljp.leecode_cn.dynamic_programming._中等_474_一和零;
+
 /**
  * 一个日常测试类
  * @author ljp
@@ -7,7 +9,9 @@ package com.ljp.leecode_cn;
  */
 public class test {
     public static void main(String[] args) {
-        char ch = (char)('a' + 2);
-        System.out.println(ch);
+        String[] strs = new String[]{"10", "0001", "111001", "1", "0"};
+        int m = 5, n = 4;
+        _中等_474_一和零 test = new _中等_474_一和零();
+        System.out.println(test.findMaxForm(strs, m, n));
     }
 }

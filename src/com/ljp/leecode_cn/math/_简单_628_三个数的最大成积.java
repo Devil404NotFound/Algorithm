@@ -1,10 +1,8 @@
 package com.ljp.leecode_cn.math;
 
 import java.util.Arrays;
-import java.util.Deque;
-import java.util.LinkedList;
 
-/**
+/** 每日一题 2021.01.20
  628. 三个数的最大乘积
  给定一个整型数组，在数组中找出由三个数组成的最大乘积，并输出这个乘积。
 

@@ -30,7 +30,7 @@ package com.ljp.leecode_cn.offer;
 链接：https://leetcode-cn.com/problems/zai-pai-xu-shu-zu-zhong-cha-zhao-shu-zi-lcof
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
  */
-public class 简单_53_在排序数组中查找数字I {
+public class _简单_53_在排序数组中查找数字I {
     /**
      * 暴力算法
      * @param nums
