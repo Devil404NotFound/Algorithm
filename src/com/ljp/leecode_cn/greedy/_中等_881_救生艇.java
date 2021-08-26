@@ -2,7 +2,10 @@ package com.ljp.leecode_cn.greedy;
 
 import java.util.Arrays;
 
-/**
+/**每日一题 2021.08.26
+ * @author lijunpeng
+ * @date 2021/8/26 23:13
+ * @Description
  * 881. 救生艇
  第 i 个人的体重为 people[i]，每艘船可以承载的最大重量为 limit。
 
@@ -50,5 +53,27 @@ public class _中等_881_救生艇 {
             count++;
         }
         return count;
+    }
+    /** 改进一些
+    * @Author lijunpeng
+    * @Date 2021/8/26 23:19
+    * @Description
+    执行用时：
+    18 ms, 在所有 Java 提交中击败了41.68%的用户
+    内存消耗：
+    47.4 MB, 在所有 Java 提交中击败了23.56%的用户
+     **/
+    public int numRescueBoats2(int[] people, int limit) {
+        Arrays.sort(people);
+        int left = 0, right = people.length - 1;
+        int ans = 0;
+        while(left <= right) {
+            if(people[left] + people[right] <= limit) {
+                ++left;
+            }
+            --right;
+            ++ans;
+        }
+        return ans;
     }
 }
