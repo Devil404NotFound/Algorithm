@@ -1,6 +1,6 @@
 package com.ljp.leecode_cn.math;
 
-/**
+/**每日议题 2021.08.28
  * 1480. 一维数组的动态和
  给你一个数组 nums 。数组「动态和」的计算公式为：runningSum[i] = sum(nums[0]…nums[i]) 。
 
@@ -31,7 +31,7 @@ package com.ljp.leecode_cn.math;
  */
 public class _简单_1480_一维数组的动态和 {
     /**
-     *
+     * 2021.08.28从做一次
      * @param nums
      * @return
      * 执行用时：
