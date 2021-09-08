@@ -1,6 +1,6 @@
 package com.ljp.leecode_cn.greedy;
 
-/**
+/** 每日一题 2021.09.07
  * 1221. 分割平衡字符串
  在一个「平衡字符串」中，'L' 和 'R' 字符的数量是相同的。
 
@@ -66,5 +66,24 @@ public class _简单_1221_分割平衡字符串 {
             }
         }
         return sum;
+    }
+    /**
+    * @Author lijunpeng
+    * @Date 2021/9/7 21:38
+    * @Description
+    执行用时：
+    0 ms, 在所有 Java 提交中击败了100.00%的用户
+    内存消耗：
+    36.4 MB, 在所有 Java 提交中击败了15.65%的用户
+    **/
+    public int balancedStringSplit2(String s) {
+        int count = 0;
+        int n = s.length();
+        int ans = 0;
+        for(int i = 0; i < n; ++i) {
+            count += s.charAt(i) == 'L' ? -1 : 1;
+            ans += count == 0 ? 1 : 0;
+        }
+        return ans;
     }
 }
