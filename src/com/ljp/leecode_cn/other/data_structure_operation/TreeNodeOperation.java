@@ -1,11 +1,9 @@
 package com.ljp.leecode_cn.other.data_structure_operation;
 
 import com.ljp.leecode_cn.other.data_structure.TreeNode;
-import sun.reflect.generics.tree.Tree;
 
 import java.util.Deque;
 import java.util.LinkedList;
-import java.util.Stack;
 
 /**
  * 对LeetCode中TreeNode数据结构的操作

@@ -1,10 +1,5 @@
 package com.ljp.leecode_cn.math;
 
-import sun.text.resources.FormatData;
-
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
 /** 每日一题 2020.10.31
  1154. 一年中的第几天

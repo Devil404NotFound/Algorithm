@@ -1,6 +1,5 @@
 package org.lanqiao.Utils;
 
-import sun.security.util.Length;
 
 import java.util.Random;
 
