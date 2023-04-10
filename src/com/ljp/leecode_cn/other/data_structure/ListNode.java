@@ -11,14 +11,18 @@ public class ListNode {
         this.val = x;
         this.next = next;
     }
-    public ListNode createListNode(int[] arr) {
-        ListNode node = this;
+    public static ListNode createListNode(int[] arr) {
+        if(arr == null || arr.length == 0) {
+            return null;
+        }
+        ListNode node = new ListNode(arr[0]);
+        ListNode dummyNode = new ListNode(0, node);
         for (int i = 1; i < arr.length; i++) {
             ListNode p = new ListNode(arr[i]);
             node.next = p;
             node = p;
         }
-        return this;
+        return dummyNode.next;
     }
     public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
         if(l1 == null){
