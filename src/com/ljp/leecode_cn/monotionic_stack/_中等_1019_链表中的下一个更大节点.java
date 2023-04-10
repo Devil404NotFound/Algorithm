@@ -31,7 +31,7 @@ import java.util.List;
 public class _中等_1019_链表中的下一个更大节点 {
     public static void main(String[] args) {
         int[] arr = new int[]{9,7,6,7,6,9};
-        int[] ints = new _中等_1019_链表中的下一个更大节点().nextLargerNodes(ListNode.createListNode(arr));
+        int[] ints = new _中等_1019_链表中的下一个更大节点().nextLargerNodes2(ListNode.createListNode(arr));
         System.out.println(ints);
     }
 
@@ -58,6 +58,36 @@ public class _中等_1019_链表中的下一个更大节点 {
             cur = cur.next;
         }
 
+        int size = ans.size();
+        int[] arr = new int[size];
+        for (int i = 0; i < size; ++i) {
+            arr[i] = ans.get(i);
+        }
+        return arr;
+    }
+
+    /**
+     * 官方题解评论1：直接使用ans数组记录下标
+     执行用时：
+     15 ms, 在所有 Java 提交中击败了75.36%的用户
+     内存消耗：45.1 MB, 在所有 Java 提交中击败了36.35%的用户
+     */
+    public int[] nextLargerNodes2(ListNode head) {
+        List<Integer> ans = new ArrayList<>();
+        Deque<Integer> stack = new ArrayDeque<>();
+        ListNode cur = head;
+        int idx = -1;
+        while (cur != null) {
+            ans.add(cur.val);
+            while (!stack.isEmpty() && ans.get(stack.peek()) < cur.val) {
+                ans.set(stack.pop(), cur.val);
+            }
+            stack.push(++idx);
+            cur = cur.next;
+        }
+        while(!stack.isEmpty()) {
+            ans.set(stack.pop(), 0);
+        }
         int size = ans.size();
         int[] arr = new int[size];
         for (int i = 0; i < size; ++i) {
