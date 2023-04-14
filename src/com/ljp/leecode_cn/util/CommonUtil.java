@@ -17,4 +17,14 @@ public class CommonUtil {
         }
         return list;
     }
+    public static String printArray(Object[] objects) {
+        StringBuilder sb = new StringBuilder("[");
+        for (Object object : objects) {
+            sb.append(object);
+            sb.append(",");
+        }
+        sb.setLength(sb.length() - 1);
+        sb.append("]");
+        return sb.toString();
+    }
 }
