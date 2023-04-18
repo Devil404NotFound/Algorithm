@@ -45,20 +45,18 @@ public class _中等_1026_节点与其祖先之间的最大差值 {
      内存消耗：
      41.4 MB, 在所有 Java 提交中击败了36.88%的用户
      */
-    int ans = 0;
     public int maxAncestorDiff(TreeNode root) {
-        maxAncestorDiffCore(root, root.val, root.val);
-        return ans;
+        return maxAncestorDiffCore(root, root.val, root.val);
     }
-    private void maxAncestorDiffCore(TreeNode root, int min, int max) {
+    private int maxAncestorDiffCore(TreeNode root, int min, int max) {
         if(root == null) {
-            return;
+            return 0;
         }
         int curMax = Math.max(Math.abs(root.val - min), Math.abs(root.val - max));
-        ans = Math.max(curMax, ans);
         int nextMin = Math.min(min, root.val);
         int nextMax = Math.max(max, root.val);
-        maxAncestorDiffCore(root.left, nextMin, nextMax);
-        maxAncestorDiffCore(root.right,nextMin, nextMax);
+        curMax = Math.max(curMax, maxAncestorDiffCore(root.left, nextMin, nextMax));
+        curMax = Math.max(curMax, maxAncestorDiffCore(root.right,nextMin, nextMax));
+        return curMax;
     }
 }
