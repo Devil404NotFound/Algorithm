@@ -33,6 +33,11 @@ package com.ljp.leecode_cn.sliding_window;
 A[i] 为 0 或 1
  */
 public class _中等_1004_最大连续1的个数III {
+
+    public static void main(String[] args) {
+        int[] nums = {1,1,1,0,0,0,1,1,1,1,0};
+        int ans = new _中等_1004_最大连续1的个数III().longestOnes2(nums, 2);
+    }
     /**
      *
      * @param A
@@ -58,6 +63,24 @@ public class _中等_1004_最大连续1的个数III {
                 left++;
             }
             ans = Math.max(ans, right - left);
+        }
+        return ans;
+    }
+
+    /**
+     2023.04.22 官方题解
+     */
+    public int longestOnes2(int[] nums, int k) {
+        int n = nums.length;
+        int left = 0, lsum = 0, rsum = 0;
+        int ans = 0;
+        for (int right = 0; right < n; ++right) {
+            rsum += 1 - nums[right];
+            while (lsum < rsum - k) {
+                lsum += 1 - nums[left];
+                ++left;
+            }
+            ans = Math.max(ans, right - left + 1);
         }
         return ans;
     }
